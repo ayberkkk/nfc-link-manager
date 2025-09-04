@@ -46,3 +46,68 @@ Modern and user-friendly NFC card management application. Assign links to your N
 - Node.js 18+
 - npm or yarn
 - Supabase account
+
+### Local Development Setup
+
+1. Clone the repository:
+```bash
+git clone https://github.com/ayberkkk/nfc-link-manager.git
+cd nfc-link-manager
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Create `.env.local` file:
+```bash
+cp .env.example .env.local
+```
+
+4. Add your Supabase credentials to `.env.local`:
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+5. Run the development server:
+```bash
+npm run dev
+```
+
+## 🚀 Vercel Deployment
+
+### Environment Variables Setup
+
+1. Go to your [Vercel Dashboard](https://vercel.com/dashboard)
+2. Select your project
+3. Navigate to **Settings** → **Environment Variables**
+4. Add the following variables:
+
+| Variable Name | Description | Example |
+|--------------|-------------|---------|
+| `NEXT_PUBLIC_SUPABASE_URL` | Your Supabase project URL | `https://xxxxx.supabase.co` |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Your Supabase anonymous key | `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...` |
+
+### Getting Supabase Credentials
+
+1. Go to [Supabase Dashboard](https://app.supabase.com)
+2. Select your project
+3. Navigate to **Settings** → **API**
+4. Copy:
+   - **Project URL** → Use as `NEXT_PUBLIC_SUPABASE_URL`
+   - **anon public** key → Use as `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+
+### Deploy to Vercel
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/ayberkkk/nfc-link-manager)
+
+Or deploy manually:
+
+1. Push your code to GitHub
+2. Import project to Vercel
+3. Add environment variables
+4. Deploy!
+
+## 🗄️ Database Setup
