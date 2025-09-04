@@ -1,0 +1,135 @@
+{
+  "app_name": "NFC Manager",
+  "welcome": "Hoş Geldiniz",
+  "welcome_user": "Hoş Geldiniz, {{name}}!",
+  "manage_nfc": "NFC kartlarınızı kolayca yönetin",
+  
+  "auth": {
+    "login": "Giriş Yap",
+    "register": "Kayıt Ol",
+    "logout": "Çıkış Yap",
+    "email": "Email",
+    "password": "Şifre",
+    "name": "Adınız",
+    "enter_email": "email@example.com",
+    "enter_password": "Şifrenizi girin",
+    "create_password": "Güçlü bir şifre oluşturun",
+    "enter_name": "Adınızı girin",
+    "login_subtitle": "Hesabınıza giriş yapın",
+    "register_subtitle": "Yeni hesap oluşturun",
+    "no_account": "Hesabınız yok mu? Kayıt olun",
+    "have_account": "Zaten hesabınız var mı? Giriş yapın",
+    "fill_all_fields": "Lütfen tüm alanları doldurun!",
+    "user_not_found": "Kullanıcı bulunamadı",
+    "invalid_password": "Geçersiz şifre",
+    "login_failed": "Giriş başarısız!",
+    "register_success": "Kayıt başarılı!",
+    "email_exists": "Bu email zaten kayıtlı!"
+  },
+  
+  "nav": {
+    "home": "Ana Sayfa",
+    "cards": "Kartlarım",
+    "settings": "Ayarlar"
+  },
+  
+  "tab": {
+    "home": "Ana Sayfa",
+    "my_cards": "Kartlarım",
+    "settings": "Ayarlar"
+  },
+  
+  "operation": {
+    "operations": "İşlemler",
+    "read": "Okuma",
+    "write": "Yazdır",
+    "reset": "Sıfırla",
+    "lock": "Kilitle",
+    "read_description": "Kartı okut",
+    "write_description": "Link ekle",
+    "reset_description": "Kartı temizle",
+    "lock_description": "Kartı kilitle",
+    "cancel": "İptal"
+  },
+  
+  "cards": {
+    "total_cards": "Toplam Kart",
+    "my_cards": "Kartlarım",
+    "search": "Kart ara...",
+    "search_placeholder": "Kart ara...",
+    "no_cards": "Henüz kart eklenmemiş",
+    "no_cards_message": "Henüz kart eklenmemiş",
+    "card_uid": "Kart UID",
+    "link": "Link",
+    "new_link": "Yeni Link",
+    "copy": "Kopyala",
+    "delete": "Sil",
+    "copied": "Kopyalandı!",
+    "copy_success": "Kopyalandı!",
+    "deleted": "Kart silindi!",
+    "delete_success": "Kart silindi!",
+    "added": "Kart başarıyla eklendi!",
+    "written": "Kart başarıyla yazıldı!",
+    "write_success": "Kart başarıyla yazıldı!",
+    "read_success": "Kart başarıyla okundu!",
+    "reset_success": "Kart sıfırlandı!",
+    "lock_success": "Kart kilitlendi! Artık değiştirilemez.",
+    "locked": "Kart kilitlendi! Artık değiştirilemez.",
+    "error_loading": "Kartlar yüklenirken hata oluştu!",
+    "error_loading_cards": "Kartlar yüklenirken hata oluştu!",
+    "error_writing": "Kart yazılırken hata oluştu!",
+    "error_writing_card": "Kart yazılırken hata oluştu!",
+    "error_general": "Bir hata oluştu!",
+    "enter_link": "Lütfen bir link girin!",
+    "fill_link": "Lütfen bir link girin!",
+    "attention": "Dikkat!",
+    "reset_warning": "Karttaki tüm veriler silinecek.",
+    "permanent_lock": "Kalıcı Kilitleme!",
+    "lock_warning": "Kart bir daha değiştirilemez."
+  },
+  
+  "nfc": {
+    "waiting": "NFC Kart Bekleniyor",
+    "place_card": "Lütfen kartınızı okutun",
+    "login_required": "Lütfen önce giriş yapın!",
+    "manage_cards_description": "NFC kartlarınızı kolayca yönetin",
+    "scan_expected": "NFC Kart Bekleniyor",
+    "scan_please": "Lütfen kartınızı okutun"
+  },
+  
+  "modal": {
+    "cancel": "İptal",
+    "confirm": "Onayla",
+    "warning": "Dikkat!",
+    "reset_warning": "Karttaki tüm veriler silinecek.",
+    "lock_warning": "Kalıcı Kilitleme!",
+    "lock_warning_desc": "Kart bir daha değiştirilemez."
+  },
+  
+  "user": {
+    "user_info": "Kullanıcı Bilgileri",
+    "name_surname": "Ad Soyad",
+    "email": "Email"
+  },
+  
+  "app": {
+    "app_settings": "Uygulama Ayarları",
+    "notifications": "Bildirimler",
+    "auto_read": "Otomatik Okuma",
+    "about": "Hakkında",
+    "version": "NFC Manager v1.0.0",
+    "copyright": "© 2024 Tüm hakları saklıdır"
+  },
+  
+  "settings": {
+    "user_info": "Kullanıcı Bilgileri",
+    "app_settings": "Uygulama Ayarları",
+    "notifications": "Bildirimler",
+    "auto_read": "Otomatik Okuma",
+    "about": "Hakkında",
+    "version": "NFC Manager v1.0.0",
+    "copyright": "© 2024 Tüm hakları saklıdır",
+    "full_name": "Ad Soyad"
+  }
+}
+

@@ -1,0 +1,134 @@
+{
+  "app_name": "NFC Manager",
+  "welcome": "Welcome",
+  "welcome_user": "Welcome, {{name}}!",
+  "manage_nfc": "Easily manage your NFC cards",
+  
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "email": "Email",
+    "password": "Password",
+    "name": "Your Name",
+    "enter_email": "email@example.com",
+    "enter_password": "Enter your password",
+    "create_password": "Create a strong password",
+    "enter_name": "Enter your name",
+    "login_subtitle": "Login to your account",
+    "register_subtitle": "Create new account",
+    "no_account": "Don't have an account? Register",
+    "have_account": "Already have an account? Login",
+    "fill_all_fields": "Please fill all fields!",
+    "user_not_found": "User not found",
+    "invalid_password": "Invalid password",
+    "login_failed": "Login failed!",
+    "register_success": "Registration successful!",
+    "email_exists": "This email is already registered!"
+  },
+  
+  "nav": {
+    "home": "Home",
+    "cards": "My Cards",
+    "settings": "Settings"
+  },
+  
+  "tab": {
+    "home": "Home",
+    "my_cards": "My Cards",
+    "settings": "Settings"
+  },
+  
+  "operation": {
+    "operations": "Operations",
+    "read": "Read",
+    "write": "Write",
+    "reset": "Reset",
+    "lock": "Lock",
+    "read_description": "Read card",
+    "write_description": "Add link",
+    "reset_description": "Clear card",
+    "lock_description": "Lock card",
+    "cancel": "Cancel"
+  },
+  
+  "cards": {
+    "total_cards": "Total Cards",
+    "my_cards": "My Cards",
+    "search": "Search cards...",
+    "search_placeholder": "Search cards...",
+    "no_cards": "No cards added yet",
+    "no_cards_message": "No cards added yet",
+    "card_uid": "Card UID",
+    "link": "Link",
+    "new_link": "New Link",
+    "copy": "Copy",
+    "delete": "Delete",
+    "copied": "Copied!",
+    "copy_success": "Copied!",
+    "deleted": "Card deleted!",
+    "delete_success": "Card deleted!",
+    "added": "Card successfully added!",
+    "written": "Card successfully written!",
+    "write_success": "Card successfully written!",
+    "read_success": "Card successfully read!",
+    "reset_success": "Card reset!",
+    "lock_success": "Card locked! Cannot be modified anymore.",
+    "locked": "Card locked! Cannot be modified anymore.",
+    "error_loading": "Error loading cards!",
+    "error_loading_cards": "Error loading cards!",
+    "error_writing": "Error writing card!",
+    "error_writing_card": "Error writing card!",
+    "error_general": "An error occurred!",
+    "enter_link": "Please enter a link!",
+    "fill_link": "Please enter a link!",
+    "attention": "Attention!",
+    "reset_warning": "All data on the card will be deleted.",
+    "permanent_lock": "Permanent Lock!",
+    "lock_warning": "Card cannot be modified again."
+  },
+  
+  "nfc": {
+    "waiting": "Waiting for NFC Card",
+    "place_card": "Please tap your card",
+    "login_required": "Please login first!",
+    "manage_cards_description": "Easily manage your NFC cards",
+    "scan_expected": "Waiting for NFC Card",
+    "scan_please": "Please tap your card"
+  },
+  
+  "modal": {
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "warning": "Warning!",
+    "reset_warning": "All data on the card will be deleted.",
+    "lock_warning": "Permanent Lock!",
+    "lock_warning_desc": "Card cannot be modified again."
+  },
+  
+  "user": {
+    "user_info": "User Information",
+    "name_surname": "Full Name",
+    "email": "Email"
+  },
+  
+  "app": {
+    "app_settings": "App Settings",
+    "notifications": "Notifications",
+    "auto_read": "Auto Read",
+    "about": "About",
+    "version": "NFC Manager v1.0.0",
+    "copyright": "© 2024 All rights reserved"
+  },
+  
+  "settings": {
+    "user_info": "User Information",
+    "app_settings": "App Settings",
+    "notifications": "Notifications",
+    "auto_read": "Auto Read",
+    "about": "About",
+    "version": "NFC Manager v1.0.0",
+    "copyright": "© 2024 All rights reserved",
+    "full_name": "Full Name"
+  }
+}
