@@ -26,6 +26,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
 import NfcIcon from '@mui/icons-material/Nfc';
 import LanguageIcon from '@mui/icons-material/Language';
+import { supabase } from '@/lib/supabaseClient'
 
 interface User {
   id: string;
@@ -64,6 +65,10 @@ export default function NFCManager() {
   const [scannedCard, setScannedCard] = useState<ScannedCard | null>(null);
   const [newLink, setNewLink] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
+  const [nfcSupported, setNfcSupported] = useState(false)
+  const [cardLink, setCardLink] = useState<string | null>(null)
+  const [error, setError] = useState<string | null>(null)
+  const [isReading, setIsReading] = useState(false)
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
@@ -89,6 +94,64 @@ export default function NFCManager() {
       fetchCards();
     }
   }, [currentUser]);
+
+  // NFC desteğini kontrol et
+  useEffect(() => {
+    setNfcSupported("NDEFReader" in window)
+  }, [])
+
+  async function readNFC() {
+    if (!nfcSupported) {
+      setError("Bu cihaz NFC desteklemiyor veya tarayıcı uyumlu değil.")
+      return
+    }
+
+    try {
+      setIsReading(true)
+      setError(null)
+      setCardLink(null)
+
+      const ndef = new NDEFReader()
+      await ndef.scan()
+      console.log("NFC tarama başladı...")
+
+      ndef.onreading = async (event) => {
+        const { serialNumber } = event
+        console.log("Kart UID:", serialNumber)
+
+        try {
+          // Kartın UID'sine göre veritabanından linki getir
+          const { data, error } = await supabase
+            .from('cards')
+            .select('link')
+            .eq('uid', serialNumber)
+            .single()
+
+          if (error) {
+            setError("Karta bağlı link bulunamadı.")
+            return
+          }
+
+          if (data && data.link) {
+            setCardLink(data.link)
+            // Linki otomatik olarak aç
+            window.open(data.link, '_blank')
+          } else {
+            setError("Bu karta bağlı bir link yok.")
+          }
+        } catch (dbError) {
+          setError("Veritabanı sorgusu sırasında hata oluştu.")
+          console.error(dbError)
+        } finally {
+          setIsReading(false)
+        }
+      }
+    } catch (nfcError) {
+      setError("NFC okuma hatası: " + nfcError)
+      setIsReading(false)
+      console.error(nfcError)
+    }
+  }
 
   async function fetchCards() {
     if (!currentUser) return;
