@@ -51,6 +51,36 @@ interface ScannedCard {
   locked: boolean;
 }
 
+// Web NFC API Type Tanımlamaları
+interface NDEFMessage {
+  records: NDEFRecord[];
+}
+
+interface NDEFRecord {
+  recordType: string;
+  mediaType?: string;
+  encoding?: string;
+  data: Uint8Array;
+}
+
+interface NDEFReadingEvent extends Event {
+  serialNumber: string;
+  message: NDEFMessage;
+}
+
+interface NDEFReader {
+  scan(): Promise<void>;
+  onreading: ((event: NDEFReadingEvent) => void) | null;
+}
+
+declare global {
+  interface Window {
+    NDEFReader?: {
+      new(): NDEFReader;
+    };
+  }
+}
+
 export default function NFCManager() {
   const { t, i18n } = useTranslation();
   const [currentUser, setCurrentUser] = useState<User | null>(null);
@@ -88,6 +118,19 @@ export default function NFCManager() {
     }
   }, [i18n]);
 
+  // NFC desteğini kontrol et
+  useEffect(() => {
+    const checkNfcSupport = () => {
+      const supported = "NDEFReader" in window;
+      setNfcSupported(supported);
+      if (!supported) {
+        setError("Bu cihaz NFC desteklemiyor veya tarayıcı uyumlu değil.");
+      }
+    };
+
+    checkNfcSupport();
+  }, []);
+
   // Kullanıcı değiştiğinde kartları yükle
   useEffect(() => {
     if (currentUser) {
@@ -95,63 +138,65 @@ export default function NFCManager() {
     }
   }, [currentUser]);
 
-  // NFC desteğini kontrol et
-  useEffect(() => {
-    setNfcSupported("NDEFReader" in window)
-  }, [])
-
-  async function readNFC() {
-    if (!nfcSupported) {
-      setError("Bu cihaz NFC desteklemiyor veya tarayıcı uyumlu değil.")
-      return
-    }
-
+  // Mevcut readNFC fonksiyonunu düzenle
+  async function readNFC(): Promise<void> {
     try {
-      setIsReading(true)
-      setError(null)
-      setCardLink(null)
+      setIsReading(true);
+      setError(null);
+      setCardLink(null);
 
-      const ndef = new NDEFReader()
-      await ndef.scan()
-      console.log("NFC tarama başladı...")
+      if (!window.NDEFReader) {
+        throw new Error("NDEFReader desteklenmiyor");
+      }
 
-      ndef.onreading = async (event) => {
-        const { serialNumber } = event
-        console.log("Kart UID:", serialNumber)
+      const ndef = new window.NDEFReader();
+      await ndef.scan();
+      console.log("NFC tarama başladı...");
+
+      ndef.onreading = async (event: NDEFReadingEvent) => {
+        const { serialNumber } = event;
+        console.log("Kart UID:", serialNumber);
 
         try {
-          // Kartın UID'sine göre veritabanından linki getir
           const { data, error } = await supabase
             .from('cards')
             .select('link')
             .eq('uid', serialNumber)
-            .single()
+            .single();
 
           if (error) {
-            setError("Karta bağlı link bulunamadı.")
-            return
+            setError("Karta bağlı link bulunamadı.");
+            return;
           }
 
           if (data && data.link) {
-            setCardLink(data.link)
-            // Linki otomatik olarak aç
-            window.open(data.link, '_blank')
+            setCardLink(data.link);
+            window.open(data.link, '_blank');
           } else {
-            setError("Bu karta bağlı bir link yok.")
+            setError("Bu karta bağlı bir link yok.");
           }
-        } catch (dbError) {
-          setError("Veritabanı sorgusu sırasında hata oluştu.")
-          console.error(dbError)
+        } catch (dbError: unknown) {
+          setError("Veritabanı sorgusu sırasında hata oluştu.");
+          console.error(dbError);
         } finally {
-          setIsReading(false)
+          setIsReading(false);
         }
-      }
-    } catch (nfcError) {
-      setError("NFC okuma hatası: " + nfcError)
-      setIsReading(false)
-      console.error(nfcError)
+      };
+    } catch (nfcError: unknown) {
+      setError("NFC okuma hatası: " + String(nfcError));
+      setIsReading(false);
+      console.error(nfcError);
     }
   }
+
+  // Kart okuma butonunu ekle
+  const handleNfcRead = () => {
+    if (nfcSupported && window.NDEFReader) {
+      void readNFC(); // void kullanarak Promise'ı yönetiyoruz
+    } else {
+      toast.error(t('nfc.not_supported'));
+    }
+  };
 
   async function fetchCards() {
     if (!currentUser) return;
@@ -167,7 +212,7 @@ export default function NFCManager() {
     }
   }
 
-  // Kullanıcı Girişi/Kaydı
+  // Hata yakalama türünü düzenle
   const handleAuth = async () => {
     if (!loginEmail || !loginPassword) {
       toast.error(t('auth.fill_all_fields'));
@@ -219,7 +264,7 @@ export default function NFCManager() {
           toast.error(t('auth.email_exists'));
         }
       }
-    } catch {
+    } catch (error: unknown) {
       toast.error(t('cards.error_general'));
     }
   };
