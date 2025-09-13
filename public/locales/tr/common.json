@@ -59,6 +59,11 @@
     "search_placeholder": "Kart ara...",
     "no_cards": "Henüz kart eklenmemiş",
     "no_cards_message": "Henüz kart eklenmemiş",
+    "login_required": "Giriş Yapmanız Gerekli",
+    "login_to_view": "Kartlarınızı görüntülemek için giriş yapın",
+    "cards_private": "Kartlarınız hesabınıza özeldir",
+    "account_required": "Hesap Gerekli",
+    "guest_mode": "Misafir Modu",
     "card_uid": "Kart UID",
     "link": "Link",
     "new_link": "Yeni Link",
@@ -85,7 +90,15 @@
     "attention": "Dikkat!",
     "reset_warning": "Karttaki tüm veriler silinecek.",
     "permanent_lock": "Kalıcı Kilitleme!",
-    "lock_warning": "Kart bir daha değiştirilemez."
+    "lock_warning": "Kart bir daha değiştirilemez.",
+    "db_write_success": "Link veritabanında kaydedildi",
+    "nfc_write_error": "NFC karta yazılamadı",
+    "db_only_write": "Link yalnızca veritabanında kaydedildi",
+    "db_reset_success": "Kart veritabanından kaldırıldı",
+    "nfc_reset_error": "NFC kart sıfırlanamadı",
+    "db_only_reset": "Kart yalnızca veritabanından kaldırıldı",
+    "lock_error": "Kart kilitleme hatası",
+    "lock_warning_hardware": "Bazı kartlar kilitlemeyi desteklemeyebilir"
   },
   
   "nfc": {
@@ -94,7 +107,23 @@
     "login_required": "Lütfen önce giriş yapın!",
     "manage_cards_description": "NFC kartlarınızı kolayca yönetin",
     "scan_expected": "NFC Kart Bekleniyor",
-    "scan_please": "Lütfen kartınızı okutun"
+    "scan_please": "Lütfen kartınızı okutun",
+    "not_supported": "Bu cihazda NFC desteklenmiyor",
+    "scanning": "NFC kartları taranıyor...",
+    "scan_started": "Kartınızı cihaza yaklaştırın",
+    "card_read_success": "Kart başarıyla okundu!",
+    "card_read_error": "Kart UID'si okunamadı",
+    "error": "NFC hatası",
+    "not_supported_details": "Web NFC API şu anda sadece Android cihazlarda Chrome tarayıcısında desteklenmektedir.",
+    "requirements": "Gereksinimler: Android cihaz, Chrome 89+, HTTPS protokolü",
+    "enable_nfc": "Cihazınızın NFC özelliğini ayarlardan etkinleştirin",
+    "check_compatibility": "Uyumluluk kontrolü",
+    "apple_test_mode": "Apple Test Modu Aktif",
+    "apple_test_mode_title": "Apple NFC Test Modu",
+    "apple_test_mode_desc": "Apple cihazlarda Web NFC API desteklenmediği için, simülasyon modu aktif edildi.",
+    "disable_test_mode": "Test Modunu Kapat",
+    "simulate_errors": "Hata Simülasyonu",
+    "card_found": "Kart bulundu"
   },
   
   "modal": {
@@ -109,7 +138,10 @@
   "user": {
     "user_info": "Kullanıcı Bilgileri",
     "name_surname": "Ad Soyad",
-    "email": "Email"
+    "email": "Email",
+    "delete_account": "Hesabı Sil",
+    "delete_confirm": "Hesabınızı silmek istediğinize emin misiniz? Bu işlem geri alınamaz.",
+    "account_deleted": "Hesabınız silindi."
   },
   
   "app": {
@@ -122,6 +154,8 @@
   },
   
   "settings": {
+    "account_required": "Hesap Gerekli",
+    "login_to_access": "Ayarları görüntülemek için lütfen giriş yapın",
     "user_info": "Kullanıcı Bilgileri",
     "app_settings": "Uygulama Ayarları",
     "notifications": "Bildirimler",

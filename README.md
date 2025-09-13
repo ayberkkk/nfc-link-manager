@@ -9,7 +9,13 @@ Modern and user-friendly NFC card management application. Assign links to your N
 
 ## 📱 Features
 
-### 🔐 User System
+### � Access Control
+- **Guest Mode**: Browse the app without logging in
+- **Public Main Screen**: Access the main interface without authentication
+- **Protected Features**: Secure operations requiring login
+- **Smooth Login Flow**: Easy transition from guest to authenticated user
+
+### �🔐 User System
 - Secure login with email and password
 - Password hashing with Bcrypt
 - Personal card management
@@ -110,4 +116,14 @@ Or deploy manually:
 3. Add environment variables
 4. Deploy!
 
-## 🗄️ Database Setup
+## � Latest Updates
+
+### Added Guest Mode & Improved Accessibility (13 September 2025)
+- **Guest Access**: Users can now browse the main screen without logging in
+- **Improved UX**: Clear guidance for features requiring authentication
+- **Multilingual Support**: Added new translations for guest mode features
+- **Enhanced Stability**: Fixed null reference issues for non-authenticated users
+- **Improved Error Handling**: Better error messages for restricted operations
+- **Code Quality**: Optimized React hooks and component lifecycles
+
+## �🗄️ Database Setup

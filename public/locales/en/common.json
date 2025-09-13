@@ -59,6 +59,11 @@
     "search_placeholder": "Search cards...",
     "no_cards": "No cards added yet",
     "no_cards_message": "No cards added yet",
+    "login_required": "Login Required",
+    "login_to_view": "Please login to view your cards",
+    "cards_private": "Your cards are private to your account",
+    "account_required": "Account Required",
+    "guest_mode": "Guest Mode",
     "card_uid": "Card UID",
     "link": "Link",
     "new_link": "New Link",
@@ -85,7 +90,15 @@
     "attention": "Attention!",
     "reset_warning": "All data on the card will be deleted.",
     "permanent_lock": "Permanent Lock!",
-    "lock_warning": "Card cannot be modified again."
+    "lock_warning": "Card cannot be modified again.",
+    "db_write_success": "Link saved in database",
+    "nfc_write_error": "Could not write to NFC card",
+    "db_only_write": "Link saved in database only",
+    "db_reset_success": "Card removed from database",
+    "nfc_reset_error": "Could not reset NFC card",
+    "db_only_reset": "Card removed from database only",
+    "lock_error": "Error locking the card",
+    "lock_warning_hardware": "Some cards may not support locking"
   },
   
   "nfc": {
@@ -94,7 +107,23 @@
     "login_required": "Please login first!",
     "manage_cards_description": "Easily manage your NFC cards",
     "scan_expected": "Waiting for NFC Card",
-    "scan_please": "Please tap your card"
+    "scan_please": "Please tap your card",
+    "not_supported": "NFC is not supported on this device",
+    "scanning": "Scanning for NFC cards...",
+    "scan_started": "Tap your card to the device",
+    "card_read_success": "Card successfully read!",
+    "card_read_error": "Could not read card UID",
+    "error": "NFC error",
+    "not_supported_details": "Web NFC API is currently only supported in Chrome on Android devices.",
+    "requirements": "Requirements: Android device, Chrome 89+, HTTPS protocol",
+    "enable_nfc": "Enable NFC feature in your device settings",
+    "check_compatibility": "Compatibility check",
+    "apple_test_mode": "Apple Test Mode Active",
+    "apple_test_mode_title": "Apple NFC Test Mode",
+    "apple_test_mode_desc": "Apple devices don't support Web NFC API, simulation mode is active.",
+    "disable_test_mode": "Disable Test Mode",
+    "simulate_errors": "Simulate Errors",
+    "card_found": "Card found"
   },
   
   "modal": {
@@ -109,7 +138,23 @@
   "user": {
     "user_info": "User Information",
     "name_surname": "Full Name",
-    "email": "Email"
+    "email": "Email",
+    "delete_account": "Delete Account",
+    "delete_confirm": "Are you sure you want to delete your account? This action cannot be undone.",
+    "account_deleted": "Your account has been deleted."
+  },
+  
+  "settings": {
+    "account_required": "Account Required",
+    "login_to_access": "Please login to view settings",
+    "user_info": "User Information",
+    "app_settings": "App Settings",
+    "notifications": "Notifications",
+    "auto_read": "Auto Read",
+    "about": "About",
+    "version": "NFC Manager v1.0.0",
+    "copyright": "© 2024 All rights reserved",
+    "full_name": "Full Name"
   },
   
   "app": {
@@ -119,16 +164,5 @@
     "about": "About",
     "version": "NFC Manager v1.0.0",
     "copyright": "© 2024 All rights reserved"
-  },
-  
-  "settings": {
-    "user_info": "User Information",
-    "app_settings": "App Settings",
-    "notifications": "Notifications",
-    "auto_read": "Auto Read",
-    "about": "About",
-    "version": "NFC Manager v1.0.0",
-    "copyright": "© 2024 All rights reserved",
-    "full_name": "Full Name"
   }
 }
