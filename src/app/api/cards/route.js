@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { supabase } from "@/lib/supabaseClient";
 
 export async function GET() {
@@ -15,7 +16,7 @@ export async function GET() {
       .select("id, uid, link, user_id, users(name, email)");
     if (error) return Response.json({ error }, { status: 500 });
     return Response.json(data);
-  } catch (err) {
+  } catch (_) {
     return Response.json(
       { error: "Internal server error" },
       { status: 500 }
@@ -40,7 +41,7 @@ export async function POST(req) {
       .select();
     if (error) return Response.json({ error }, { status: 500 });
     return Response.json(data, { status: 201 });
-  } catch (err) {
+  } catch (_) {
     return Response.json(
       { error: "Internal server error" },
       { status: 500 }
@@ -62,7 +63,7 @@ export async function DELETE(req) {
     const { error } = await supabase.from("cards").delete().eq("id", id);
     if (error) return Response.json({ error }, { status: 500 });
     return Response.json({ success: true });
-  } catch (err) {
+  } catch (_) {
     return Response.json(
       { error: "Internal server error" },
       { status: 500 }

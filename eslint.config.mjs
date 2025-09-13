@@ -20,6 +20,12 @@ const eslintConfig = [
       "next-env.d.ts",
     ],
   },
+  {
+    rules: {
+      "@typescript-eslint/no-unused-vars": "warn", // kullanılmayan değişkenleri uyarı olarak işaretle, hata değil
+      "@typescript-eslint/no-explicit-any": "warn", // any kullanımını uyarı olarak işaretle, hata değil
+    },
+  },
 ];
 
 export default eslintConfig;

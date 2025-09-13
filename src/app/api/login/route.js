@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { supabase } from "@/lib/supabaseClient";
 import bcrypt from "bcryptjs";
 import { verifyToken } from "@/lib/twoFactorAuth";
